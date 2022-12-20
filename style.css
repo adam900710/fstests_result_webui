@@ -1,0 +1,66 @@
+a {color:blue}
+a:link{color:inherit}
+a:active{color:inherit}
+a:visited{color:inherit}
+a:hover{color:inherit}
+
+table.summary th {
+    text-align: center;
+}
+
+table.summary td {
+    text-align: left;
+    padding: 5px;
+}
+
+table.results_time {
+    float: left;
+    max-width: 500px;
+}
+
+table.results {
+	float: left;
+	max-width: 300px;
+}
+
+table.results_output {
+    float: left;
+    max-width: 700px;
+}
+
+table.runs {
+	float: left;
+	max-width: 900px;
+}
+
+th {
+	height: 50px;
+}
+
+th, td {
+	padding: 15px;
+	text-align: left;
+}
+
+.passing th,
+.passing td {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.failing th,
+.failing td {
+	background-color: Tomato;
+	color: white;
+}
+
+.notrun th,
+.notrun td {
+	background-color: Grey;
+	color: white;
+}
+
+th.runs {
+	background-color: Pink;
+	color: black;
+}

@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>results for one run</title>
+	<link rel="stylesheet" href="../../../style.css"/>
+</head>
+<body>
+<div>
+  <div>
+    <table class="summary">
+      <tr><th colspan="2">Summary</th></tr>
+      <tr><td>Hostname</td><td>{{ hostname }}</td></tr>
+      <tr><td>Section</td><td>{{ section }}</td></tr>
+      <tr><td>Timestamp</td><td>{{ timestamp }}</td></tr>
+      <tr><td>Pass</td><td>{{ passed_cases|length }}</td></tr>
+      <tr><td>Fails</td><td>{{ failed_cases|length }}</td></tr>
+      <tr><td>Not Run</td><td>{{ skipped_cases|length }}</td></tr>
+    </table>
+  <div>
+    <table class="results_output">
+      <tr class="failing">
+        <th colspan="4">Failures ({{ failed_cases|length }} total)</th>
+      </tr>
+      <tr>
+        <th>Name</th><th>out.bad</th><th>dmesg</th>
+      </tr>
+      {% for case in failed_cases %}
+        <tr>
+          <td>{{ case.name }}</td>
+          {% if case.has_out %}
+            <td><a href="{{ case.name + ".out.bad" }}">{{ case.name + ".out.bad" }}</a></td>
+          {% else %}
+            <td>No out.bad output</td>
+          {% endif %}
+          {% if case.has_dmesg %}
+            <td><a href="{{ case.name + ".dmesg" }}">{{ case.name + ".dmesg" }}</a></td>
+          {% else %}
+            <td>No dmesg output</td>
+          {% endif %}
+        </tr>
+      {% endfor %}
+    </table>
+    <table class="results_time">
+      <tr class="passing">
+        <th colspan="3">Passing ({{ passed_cases|length }} total)</th>
+      </tr>
+      <tr>
+        <th>Name</th><th>Time spent</th>
+      </tr>
+      {% for case in passed_cases %}
+        <tr>
+          <td>{{ case.name }}</td>
+          <td>{{ case.time }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <table class="results">
+      <tr class="notrun">
+        <th colspan="2">Notruns ({{ skipped_cases|length }} total)</th>
+      </tr>
+      <tr>
+        <th>Name</th><th>Messages</th>
+      </tr>
+      {% for case in skipped_cases %}
+        <tr>
+          <td>{{ case.name }}</td>
+          <td>{{ case.message }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+</body>
+</html>
+<!-- vim: set expandtab tabstop=2 shiftwidth=2 ft=html: -->
