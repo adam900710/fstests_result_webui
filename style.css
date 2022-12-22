@@ -28,6 +28,7 @@ table.results_output {
     max-width: 700px;
 }
 
+th.runs,
 table.runs {
 	float: left;
 	max-width: 900px;
@@ -42,40 +43,23 @@ th, td {
 	text-align: left;
 }
 
+th.passing,
 .passing th,
 .passing td {
 	background-color: #4CAF50;
 	color: white;
 }
 
+th.failing,
 .failing th,
 .failing td {
 	background-color: Tomato;
 	color: white;
 }
 
+th.notrun,
 .notrun th,
 .notrun td {
-	background-color: Grey;
-	color: white;
-}
-
-th.runs {
-	background-color: Pink;
-	color: black;
-}
-
-th.passing {
-	background-color: #4CAF50;
-	color: white;
-}
-
-th.failing {
-	background-color: Tomato;
-	color: white;
-}
-
-th.notrun {
 	background-color: Grey;
 	color: white;
 }

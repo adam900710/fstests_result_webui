@@ -203,7 +203,7 @@ for one_type in history_runs.items():
             "passed": one_run[1]["passed"],
             "failed": one_run[1]["failed"],
             "skipped": one_run[1]["skipped"],
-            "url": output_dir + "/details/" + config + "/" + timestamp + "/index.html",
+            "url": "details/" + config + "/" + timestamp + "/index.html",
         })
 
 
@@ -215,4 +215,4 @@ f = open(output_dir + "/index.html", "w")
 f.write(summary_template.render(runs=plain_runs))
 f.close()
 
-print(plain_runs)
+shutil.copy("style.css", output_dir)
