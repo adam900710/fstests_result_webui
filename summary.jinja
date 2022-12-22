@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>fstests results</title>
+    <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+<table class="runs">
+  <tr><th class="runs" colspan="5"> Runs ({{ runs|length }} total)</th></tr>
+  <tr>
+    <th>Configuration (hostname + section)</th>
+    <th class="passing">Passed</th>
+    <th class="failing">Failed</th>
+    <th class="notrun">Skipped</th>
+    <th>Date</th>
+  </tr>
+  {% for r in runs %}
+    <tr>
+      <td>{{ r.config }}</td><td>{{ r.passed }}</td><td>{{ r.failed }}</td>
+      <td>{{ r.skipped }}</td><td><a href="{{ r.url }}">{{ r.timestamp }}</a></td>
+    </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

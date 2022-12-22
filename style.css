@@ -64,3 +64,18 @@ th.runs {
 	background-color: Pink;
 	color: black;
 }
+
+th.passing {
+	background-color: #4CAF50;
+	color: white;
+}
+
+th.failing {
+	background-color: Tomato;
+	color: white;
+}
+
+th.notrun {
+	background-color: Grey;
+	color: white;
+}
